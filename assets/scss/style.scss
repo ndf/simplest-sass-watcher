@@ -1,0 +1,8 @@
+// This file is the main entry point for your custom styles.
+@import "variables";
+// bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+// mixins
+@import "mixins";
+// components
+@import "components/example-component";

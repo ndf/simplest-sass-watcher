@@ -1,0 +1,49 @@
+{
+  "name": "simplest_bootstrap_sass_watcher",
+  "version": "1.0.0",
+  "description": "Most simple bootstrap sass watcher",
+  "main": "index.js",
+  "scripts": {
+    "copy-assets-to-dist": "copy-files-from-to",
+    "sass-dev": "sass --watch --update --style=expanded assets/scss:dist/css",
+    "sass-prod": "sass --no-source-map --style=compressed assets/scss:dist/css",
+    "browser-sync": "browser-sync start --proxy 'http://example.localhost/' --files 'assets/**/*.scss', 'templates/**/*.html.twig'"
+  },
+  "copyFilesSettings": {
+    "whenFileExists": "overwrite"
+  },
+  "copyFiles": [
+    {
+      "from": "assets/images/*",
+      "to": "dist/images"
+    },
+    {
+      "from": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.*",
+      "to": "dist/fonts"
+    },
+    {
+      "from": "assets/js/*",
+      "to": "dist/js"
+    },
+    {
+      "from": "node_modules/bootstrap/dist/js/bootstrap.min.js",
+      "to": "dist/js/bootstrap.min.js"
+    },
+    {
+      "from": "node_modules/@popperjs/core/dist/umd/popper.min.js",
+      "to": "dist/js/popper.min.js"
+    }
+  ],
+  "author": "ndf",
+  "license": "GNU General Public License v3.0",
+  "devDependencies": {
+    "browser-sync": "^2.27.11",
+    "copy-files-from-to": "^3.6.0",
+    "sass": "^1.57.1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.3"
+  }
+}
